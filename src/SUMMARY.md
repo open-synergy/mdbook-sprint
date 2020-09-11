@@ -13,3 +13,6 @@
     - [Mencari ID Account](./customer_invoice/account.md)
     - [Membuat Customer Invoice](./customer_invoice/membuat_customer_invoice.md)
 - [Attendance](./attendance.md)
+    - [Mencari ID Employee](./attendance/employee.md)
+    - [Membuat Absen Masuk](./attendance/membuat_absen_masuk.md)
+    - [Membuat Absen Keluar](./attendance/membuat_absen_keluar.md)
