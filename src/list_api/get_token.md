@@ -1,6 +1,6 @@
 # Get Token
 #### Endpoint
-```
+```bash
 /api/user/get_token
 ```
 
