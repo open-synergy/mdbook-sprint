@@ -1,6 +1,6 @@
 # Delete Token
 #### Endpoint
-```
+```bash
 /api/user/delete_token
 ```
 
@@ -14,6 +14,6 @@
 curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76" \
     https://demo8.simetri-sinergi.id/api/user/delete_token
 `````
-````json
+````bash
 {"success": "Token 858a5f372ea04cb7aad222fb6ba95f76 Deleted Successfully"}
 ````

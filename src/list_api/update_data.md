@@ -1,6 +1,6 @@
 # Update Data
 #### Endpoint
-```
+```bash
 /api/<string:model>/update/<int:id>
 ```
 #### Parameters
@@ -14,6 +14,6 @@
 curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76&update_vals={'name': 'Update Data Partner Demo #1'}" \
     https://demo8.simetri-sinergi.id/api/res.partner/update/28
 `````
-````json
+````bash
 {"success": "Record Updated Successfully"}
 ````

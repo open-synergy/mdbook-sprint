@@ -15,6 +15,6 @@
 curl -i -d "login=test_user&password=test_password" \
     https://demo8.simetri-sinergi.id/api/user/get_token
 `````
-````json
+````bash
 {"token": "858a5f372ea04cb7aad222fb6ba95f76"}
 ````

@@ -1,6 +1,6 @@
 # Search Data
 #### Endpoint
-```
+```bash
 /api/<string:model>/search, /api/<string:model>/search/<int:id>
 ```
 
@@ -19,7 +19,7 @@
 curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76" \
     https://demo8.simetri-sinergi.id/api/res.partner/search
 `````
-````json
+````bash
 [
     {"id": 3, "name": "Administrator"},
     {"id": 22, "name": "Bruce Banner"},
@@ -35,7 +35,7 @@ curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76" \
 curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76" \
     https://demo8.simetri-sinergi.id/api/res.partner/search/22
 ````
-````json
+````bash
 [{
     "name": "Bruce Banner",
     "company_id": [1, "Your Company"],
@@ -50,6 +50,6 @@ curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76" \
 curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76&domain=[('ref', '=', 'ADM')]" \
     https://demo8.simetri-sinergi.id/api/res.partner/search
 ````
-````json
+````bash
 [{"id": 22, "name": "Bruce Banner"}]
 ````

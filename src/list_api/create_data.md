@@ -1,6 +1,6 @@
 # Create Data
 #### Endpoint
-```
+```bash
 /api/<string:model>/create
 ```
 #### Parameters

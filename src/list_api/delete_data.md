@@ -1,6 +1,6 @@
 # Delete Data
 #### Endpoint
-```
+```bash
 /api/<string:model>/unlink, /api/<string:model>/unlink/<int:id>
 ```
 #### Parameters
@@ -15,7 +15,7 @@
 curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76" \
     https://demo8.simetri-sinergi.id/api/res.partner/unlink/28
 `````
-````json
+````bash
 {"success": "Records Successfully Deleted ID - 28"}
 ````
 
@@ -24,6 +24,6 @@ curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76" \
 curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76&unlink_ids=[22,23,24]" \
     https://demo8.simetri-sinergi.id/api/res.partner/unlink
 `````
-````json
+````bash
 {"success": "Records Successfully Deleted ID - [22,23,24]"}
 ````
