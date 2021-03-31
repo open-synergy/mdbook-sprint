@@ -16,3 +16,5 @@
     - [Mencari ID Employee](./attendance/employee.md)
     - [Membuat Absen Masuk](./attendance/membuat_absen_masuk.md)
     - [Membuat Absen Keluar](./attendance/membuat_absen_keluar.md)
+- [Cuti dan Izin](./cuti-izin.md)    
+    - [Membuat Cuti Izin](./cuti-izin/membuat.md)
