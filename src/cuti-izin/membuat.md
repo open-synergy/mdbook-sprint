@@ -2,7 +2,7 @@
 
 #### Endpoint
 ```bash
-/api/<hr.holidays>/create
+/api/hr.holidays/create
 ```
 
 #### Parameters
