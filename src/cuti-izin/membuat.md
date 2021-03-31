@@ -1,4 +1,4 @@
-# Membuat Cuti Izin
+# Membuat Cuti/Izin
 
 #### Endpoint
 ```bash
