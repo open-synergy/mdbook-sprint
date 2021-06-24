@@ -2,7 +2,7 @@
 
 #### Endpoint
 ```bash
-/api/hr.holidays/{id}/method/get_days/
+/api/hr.holidays.status/{id}/method/get_days/
 ```
 
 #### Parameters
@@ -56,6 +56,6 @@
 Mencari jatah **cuti tahunan** untuk karyawan dengan database ID **2**
 
 ```bash
-/api/hr.holidays/1/method/get_days/?
+/api/hr.holidays.status/1/method/get_days/?
 	token=1ec448c54a004165b4c0da976b227260&args={'employee_id':2}
 ```
