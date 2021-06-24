@@ -507,7 +507,7 @@ curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create
 </ul>
 <h1><a class="header" href="#mencari-sisa-cuti" id="mencari-sisa-cuti">Mencari Sisa Cuti</a></h1>
 <h4><a class="header" href="#endpoint-14" id="endpoint-14">Endpoint</a></h4>
-<pre><code class="language-bash">/api/hr.holidays/{id}/method/get_days/
+<pre><code class="language-bash">/api/hr.holidays.status/{id}/method/get_days/
 </code></pre>
 <h4><a class="header" href="#parameters-8" id="parameters-8">Parameters</a></h4>
 <table><thead><tr><th align="left">Parameter</th><th align="left">Mandatory</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
@@ -549,7 +549,7 @@ curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create
 </ul>
 <h3><a class="header" href="#contoh-6" id="contoh-6">Contoh</a></h3>
 <p>Mencari jatah <strong>cuti tahunan</strong> untuk karyawan dengan database ID <strong>2</strong></p>
-<pre><code class="language-bash">/api/hr.holidays/1/method/get_days/?
+<pre><code class="language-bash">/api/hr.holidays.status/1/method/get_days/?
 	token=1ec448c54a004165b4c0da976b227260&amp;args={'employee_id':2}
 </code></pre>
 
