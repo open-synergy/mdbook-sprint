@@ -512,7 +512,7 @@ curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create
 <h4><a class="header" href="#parameters-8" id="parameters-8">Parameters</a></h4>
 <table><thead><tr><th align="left">Parameter</th><th align="left">Mandatory</th><th align="left">Description</th><th align="left">Type</th></tr></thead><tbody>
 <tr><td align="left">token</td><td align="left">yes</td><td align="left">Token user</td><td align="left">string</td></tr>
-<tr><td align="left">args</td><td align="left">yes</td><td align="left">keyword argument</td><td align="left">dictionary</td></tr>
+<tr><td align="left">kwargs</td><td align="left">yes</td><td align="left">keyword argument</td><td align="left">dictionary</td></tr>
 </tbody></table>
 <h4><a class="header" href="#args" id="args">args</a></h4>
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
@@ -550,7 +550,7 @@ curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create
 <h3><a class="header" href="#contoh-6" id="contoh-6">Contoh</a></h3>
 <p>Mencari jatah <strong>cuti tahunan</strong> untuk karyawan dengan database ID <strong>2</strong></p>
 <pre><code class="language-bash">/api/hr.holidays.status/1/method/get_days/?
-	token=1ec448c54a004165b4c0da976b227260&amp;args={'employee_id':2}
+	token=1ec448c54a004165b4c0da976b227260&amp;kwargs={'employee_id':2}
 </code></pre>
 
                     </main>
