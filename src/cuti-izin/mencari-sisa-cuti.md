@@ -11,7 +11,7 @@
 | Parameter   | Mandatory | Description                          | Type         |
 | :--------   | :-------- | :----------                          | :----------- |
 | token       | yes       | Token user                           | string       |
-| args | yes       | keyword argument     | dictionary   |
+| kwargs | yes       | keyword argument     | dictionary   |
 
 
 
@@ -57,5 +57,5 @@ Mencari jatah **cuti tahunan** untuk karyawan dengan database ID **2**
 
 ```bash
 /api/hr.holidays.status/1/method/get_days/?
-	token=1ec448c54a004165b4c0da976b227260&args={'employee_id':2}
+	token=1ec448c54a004165b4c0da976b227260&kwargs={'employee_id':2}
 ```
