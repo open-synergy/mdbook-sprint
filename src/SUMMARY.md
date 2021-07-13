@@ -19,3 +19,6 @@
 - [Cuti dan Izin](./cuti-izin.md)    
     - [Membuat Cuti Izin](./cuti-izin/membuat.md)
     - [Mencari Sisa Cuti](./cuti-izin/mencari-sisa-cuti.md)
+- [Reimbursement](./reimbursement.md)
+    - [Membuat Reimbursement](./reimbursement/membuat.md)
+    - [Mengkonfirmasi Reimbursement](./reimbursement/mengkonfirmasi.md)
