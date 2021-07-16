@@ -6,11 +6,11 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 - <b>model:</b> hr.employee</br>
 - <b>create_vals:</b> </br>
 
-| Key           | Type          | Description                                                        |
-| :---          | :---          | :---                                                               |
-| employee_id   | integer       | ID Employee yang didapat dari [Mencari ID Employee](./employee.md) |
-| action        | string        | Isi dengan <b>sign_in</b>                                          |
-| name          | datetime      | Tanggal Absen Masuk                                                |
+| Key           | Type          | Description                                                                       |
+| :---          | :---          | :---                                                                              |
+| employee_id   | integer       | ID Employee yang didapat dari [Mencari ID Employee](../search_master/employee.md) |
+| action        | string        | Isi dengan <b>sign_in</b>                                                         |
+| name          | datetime      | Tanggal Absen Masuk                                                               |
 
 #### Contoh
 ```bash

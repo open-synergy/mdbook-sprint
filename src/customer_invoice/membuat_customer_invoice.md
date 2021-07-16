@@ -6,23 +6,23 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 - <b>model:</b> account.invoice</br>
 - <b>create_vals:</b> </br>
 
-| Key               | Type                     | Description                                                     |
-| :---              | :---                     | :---                                                            |
-| internal_number   | string                   | Nomor Invoice                                                   |
-| partner_id        | integer                  | ID Partner yang didapat dari [Mencari ID Partner](./partner.md) |
-| account_id        | integer                  | Isi dengan ID: <b>948</b>                                       |
-| journal_id        | integer                  | Isi dengan ID: <b>46</b>                                        |
-| type              | string                   | Isi dengan <b>out_invoice</b>                                   |
-| date_invoice      | date                     | Tanggal Invoice                                                 |
-| date_due          | date                     | Tanggal Jatuh Tempo                                             |
-| invoice_line      | [(0, 0, &lt;dict&gt;)]   | Detail Invoices. Penjelasan ada dibawah                         |
+| Key               | Type                     | Description                                                                    |
+| :---              | :---                     | :---                                                                           |
+| internal_number   | string                   | Nomor Invoice                                                                  |
+| partner_id        | integer                  | ID Partner yang didapat dari [Mencari ID Partner](../search_master/partner.md) |
+| account_id        | integer                  | Isi dengan ID: <b>948</b>                                                      |
+| journal_id        | integer                  | Isi dengan ID: <b>46</b>                                                       |
+| type              | string                   | Isi dengan <b>out_invoice</b>                                                  |
+| date_invoice      | date                     | Tanggal Invoice                                                                |
+| date_due          | date                     | Tanggal Jatuh Tempo                                                            |
+| invoice_line      | [(0, 0, &lt;dict&gt;)]   | Detail Invoices. Penjelasan ada dibawah                                        |
 
 - Penjelasan isi dictionary dari <b>invoice_line:</b> </br>
 
 | Key                 | Type                           | Description                                                                                                                     |
 | :---                | :---                           | :---                                                                                                                            |
 | name                | string                         | Deskripsi Invoice                                                                                                               |
-| account_id          | integer                        | ID Account yang didapat dari [Mencari ID Account](./account.md)                                                                 |
+| account_id          | integer                        | ID Account yang didapat dari [Mencari ID Account](../search_master/account.md)                                                  |
 | price_unit          | float                          | Harga satuan                                                                                                                    |
 | quantity            | float                          | Kuantitas                                                                                                                       |
 | invoice_line_tax_id | [(6, 0, &lt;list_of_id&gt;)]   | Apabila ada PPN, isi <b>list_of_id</b> dengan <b>3</b> jika exclude PPN, <b>4</b> jika include PPN. Apabila tidak ada hilangkan.|
