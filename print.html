@@ -676,6 +676,53 @@ curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create
     https://demo8.simetri-sinergi.id/api/hr.reimbursement/4/method/action_confirm
 </code></pre>
 <h1><a class="header" href="#attach-dokumen-pada-reimbursement" id="attach-dokumen-pada-reimbursement">Attach Dokumen Pada Reimbursement</a></h1>
+<h4><a class="header" href="#endpoint-21" id="endpoint-21">Endpoint</a></h4>
+<p>Penjelasan lebih lanjut bisa dilihat <a href="reimbursement/../list_api/create_data.html">disini</a></p>
+<h4><a class="header" href="#parameter-12" id="parameter-12">Parameter</a></h4>
+<ul>
+<li><b>model:</b>hr.reimbursement</br></li>
+<li><b>create_vals:</b> </br></li>
+</ul>
+<table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
+<tr><td align="left">name</td><td align="left">string</td><td align="left">Nama / Deskripsi dari Attachment</td></tr>
+<tr><td align="left">type</td><td align="left">string</td><td align="left">Isi dengan &quot;<b>binary</b>&quot;</td></tr>
+<tr><td align="left">datas</td><td align="left">base64</td><td align="left">File attachment yang sudah dikonversi menjadi format base64</td></tr>
+<tr><td align="left">datas_fname</td><td align="left">string</td><td align="left">Nama File Attachment</td></tr>
+<tr><td align="left">res_model</td><td align="left">string</td><td align="left">Isikan dengan &quot;<b>hr.reimbursement</b>&quot;</td></tr>
+<tr><td align="left">res_id</td><td align="left">integer</td><td align="left">ID Reimbursement yang ingin dilampirkan attachment</td></tr>
+</tbody></table>
+<h4><a class="header" href="#contoh-13" id="contoh-13">Contoh</a></h4>
+<pre><code class="language-bash">import requests
+import base64
+
+params = {
+    &quot;login&quot;: &quot;admin&quot;,
+    &quot;password&quot;: &quot;admin&quot;
+}
+response = requests.get(&quot;http://localhost:8069/api/user/get_token?&quot;, params=params)
+json_data = response.json()
+token = json_data[&quot;token&quot;]
+
+datas = open(&lt;full_path&gt;, 'rb').read().encode('base64')
+
+
+vals = {
+    &quot;name&quot;: &quot;Test Attachment&quot;,
+    &quot;type&quot;: &quot;binary&quot;,
+    &quot;datas&quot;: datas,
+    &quot;datas_fname&quot;: &quot;file.txt&quot;,
+    &quot;res_model&quot;: &quot;hr.reimbursement&quot;,
+    &quot;res_id&quot;: 8,
+}
+
+params = {
+    &quot;token&quot;: token,
+    &quot;create_vals&quot;: str(vals),
+}
+
+response = requests.get(&quot;http://localhost:8069/api/ir.attachment/create?&quot;, params=params)
+print (response.content)
+</code></pre>
 
                     </main>
 
