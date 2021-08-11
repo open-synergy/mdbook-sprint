@@ -24,9 +24,9 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | ref                 | string                         | Referensi (Opsional)                                                           |
 | account_id          | integer                        | ID Account yang didapat dari [Mencari ID Account](../search_master/account.md) |
 | price_unit          | float                          | Harga satuan                                                                   |
-| approce_price_unit  | float                          | Samakan dengan nilai price_unit                                                |
+| approve_price_unit  | float                          | Samakan dengan nilai price_unit                                                |
 | quantity            | float                          | Kuantitas                                                                      |
-| approce_quantity    | float                          | Samakan dengan nilai quantity                                                  |
+| approve_quantity    | float                          | Samakan dengan nilai quantity                                                  |
 | uom_id              | integer                        | ID Account yang didapat dari [Mencari ID UOM](../search_master/uom.md)         |
 
 #### Contoh
