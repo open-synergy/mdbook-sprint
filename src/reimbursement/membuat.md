@@ -24,7 +24,9 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | ref                 | string                         | Referensi (Opsional)                                                           |
 | account_id          | integer                        | ID Account yang didapat dari [Mencari ID Account](../search_master/account.md) |
 | price_unit          | float                          | Harga satuan                                                                   |
+| approce_price_unit  | float                          | Samakan dengan nilai price_unit                                                |
 | quantity            | float                          | Kuantitas                                                                      |
+| approce_quantity    | float                          | Samakan dengan nilai quantity                                                  |
 | uom_id              | integer                        | ID Account yang didapat dari [Mencari ID UOM](../search_master/uom.md)         |
 
 #### Contoh
@@ -41,7 +43,9 @@ create_vals="{
             'product_id': 10,
             'account_id': 34,
             'price_unit': 1500000.00,
+            'approve_price_unit': 1500000.00,
             'quantity': 3,
+            'approve_quantity': 3,
             'uom_id': 1,
         }),
         (0, 0, {
@@ -50,7 +54,9 @@ create_vals="{
             'ref': 'Ref #1',
             'account_id': 44,
             'price_unit': 32500000.00,
+            'approve_price_unit': 32500000.00,
             'quantity': 1,
+            'approve_quantity': 1,
             'uom_id': 1,
         }),
     ]
