@@ -15,6 +15,8 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | res_model      | string  | Isikan dengan "<b>hr.reimbursement</b>"                                                                |
 | res_id         | integer | ID Reimbursement yang ingin dilampirkan attachment                                                     |
 
+> <b><i>Note:</i></b> File Extension antara <b>name</b> dan <b>datas_fname</b> harus sama
+
 #### Contoh
 ```bash
 import requests

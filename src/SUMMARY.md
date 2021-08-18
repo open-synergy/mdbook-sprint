@@ -8,6 +8,7 @@
     - [Update Data](./list_api/update_data.md)
     - [Delete Data](./list_api/delete_data.md)
     - [Method Call](./list_api/method_call.md)
+    - [Method Call](./list_api/method_call.md)
 - [Mencari Master Data](./mencari_master_data.md)
     - [Mencari ID Partner](./search_master/partner.md)
     - [Mencari ID Account](./search_master/account.md)
