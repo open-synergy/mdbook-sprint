@@ -8,10 +8,10 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 
 | Key            | Type    | Description                                                                                            |
 | :---           | :---    | :---                                                                                                   |
-| name           | string  | Nama / Deskripsi dari Attachment                                                                       |
+| name           | string  | Isi dengan nama file attachment disertakan dengan extension filenya, cth: png,txt,jpeg                 |
 | type           | string  | Isi dengan "<b>binary</b>"                                                                             |
 | datas          | base64  | File attachment yang sudah dikonversi menjadi format base64                                            |
-| datas_fname    | string  | Nama File Attachment                                                                                   |
+| datas_fname    | string  | Nama harus sesuai dengan file yang hendak diupload                                                     |
 | res_model      | string  | Isikan dengan "<b>hr.reimbursement</b>"                                                                |
 | res_id         | integer | ID Reimbursement yang ingin dilampirkan attachment                                                     |
 
@@ -28,14 +28,14 @@ response = requests.get("http://localhost:8069/api/user/get_token?", params=para
 json_data = response.json()
 token = json_data["token"]
 
-datas = open(<full_path>, 'rb').read().encode('base64')
+datas = open("/home/ubuntu/Documents/data1.png", 'rb').read().encode('base64')
 
 
 vals = {
-    "name": "Test Attachment",
+    "name": "attachment.png",
     "type": "binary",
     "datas": datas,
-    "datas_fname": "file.txt",
+    "datas_fname": "data1.png",
     "res_model": "hr.reimbursement",
     "res_id": 8,
 }
