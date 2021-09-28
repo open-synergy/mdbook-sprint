@@ -25,6 +25,8 @@
 | holiday_status_id | integer                  | ID Database dari jenis izin/cuti                                                       |
 | date_from         | datetime                 | Tanggal dan waktu mulai cuti/izin. Format YYYY-MM-DD HH:MM:SS. Dituliskan dalam UTC    |
 | date_to           | datetime                 | Tanggal dan waktu selesai cuti/izin. Format YYYY-MM-DD HH:MM:SS. Dituliskan dalam UTC  |
+| number_of_days_temp           | datetime                 | Durasi cuti. Dituliskan dalam negatif float  |
+
 
 ### Return
 
