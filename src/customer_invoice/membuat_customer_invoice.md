@@ -25,7 +25,7 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | account_id          | integer                        | ID Account yang didapat dari [Mencari ID Account](../search_master/account.md)                                                  |
 | price_unit          | float                          | Harga satuan                                                                                                                    |
 | quantity            | float                          | Kuantitas                                                                                                                       |
-| invoice_line_tax_id | [(6, 0, &lt;list_of_id&gt;)]   | Apabila ada PPN, isi <b>list_of_id</b> dengan <b>3</b> jika exclude PPN, <b>4</b> jika include PPN. Apabila tidak ada hilangkan.|
+| invoice_line_tax_id | [(6, 0, &lt;list_of_id&gt;)]   | Apabila ada PPN, (1) isi <b>list_of_id</b> dengan <b>[3]</b> jika exclude PPN, atau (2)<b>[4]</b> jika include PPN, atau (3) **[3,10]** jika exclude PPN dan klien adalah WAPU, atau (4) **[4,9]** jika include PPN dan klien adalah WAPU. Apabila tidak ada hilangkan.|
 
 #### Contoh
 ```bash
