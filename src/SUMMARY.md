@@ -21,6 +21,7 @@
     - [Mencari ID Partner](./search_master/partner.md)
     - [Membuat Partner](./partner/membuat.md)
 - [Customer Invoice](./customer_invoice.md)
+    - [Mencari Customer Invoice](./customer_invoice/mencari_customer_invoice.md)
     - [Membuat Customer Invoice](./customer_invoice/membuat_customer_invoice.md)
 - [Attendance](./attendance.md)
     - [Membuat Absen Masuk](./attendance/membuat_absen_masuk.md)
