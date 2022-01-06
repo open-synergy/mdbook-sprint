@@ -36,6 +36,7 @@ create_vals="{
     'zip': '13220',
     'state_id': 60,
     'country_id': 101,
+    'email': 'you@example.com',
 
 }"
 curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76&create_vals=${create_vals}" \
