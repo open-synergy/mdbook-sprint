@@ -19,6 +19,8 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | city          | varchar       | Kota/Kabupaten/Kota Madya                                                         |
 | state_id      | integer       | ID database dari propinsi                                                         |
 | country_id    | integer       | ID database dari negara                                                           |
+| country_id    | integer       | ID database dari negara                                                           |
+| email         | varchar       | Email
 
 
 #### Contoh
