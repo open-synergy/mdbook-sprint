@@ -20,6 +20,7 @@
 - [Partner](./partner.md)
     - [Mencari ID Partner](./search_master/partner.md)
     - [Membuat Partner](./partner/membuat.md)
+    - [Membuat Kontak](./partner/membuat-kontak.md)
 - [Customer Invoice](./customer_invoice.md)
     - [Mencari Customer Invoice](./customer_invoice/mencari_customer_invoice.md)
     - [Membuat Customer Invoice](./customer_invoice/membuat_customer_invoice.md)
