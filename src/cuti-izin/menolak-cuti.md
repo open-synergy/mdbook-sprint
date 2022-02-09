@@ -2,7 +2,7 @@
 
 #### Endpoint
 ```bash
-/api/hr.holidays/id/method/reject_tier
+/api/hr.holidays/id/method/action_cancel
 ```
 
 #### Parameters
