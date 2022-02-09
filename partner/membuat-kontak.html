@@ -147,7 +147,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#membuat-partner" id="membuat-partner">Membuat Partner</a></h1>
+                        <h1><a class="header" href="#membuat-kontak" id="membuat-kontak">Membuat Kontak</a></h1>
 <h4><a class="header" href="#endpoint" id="endpoint">Endpoint</a></h4>
 <p>Penjelasan lebih lanjut bisa dilihat <a href="../list_api/create_data.html">disini</a></p>
 <h4><a class="header" href="#parameter" id="parameter">Parameter</a></h4>
@@ -157,31 +157,34 @@
 </ul>
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
 <tr><td align="left">name</td><td align="left">varchar</td><td align="left">Nama klien. Wajib diisi</td></tr>
+<tr><td align="left">parent_id</td><td align="left">integer</td><td align="left">ID database dari partner utama</td></tr>
 <tr><td align="left">customer</td><td align="left">boolean</td><td align="left">Diisi dengan <strong>True</strong>. Wajib diisi.</td></tr>
 <tr><td align="left">is_customer</td><td align="left">boolean</td><td align="left">Diisi dengan <strong>True</strong>. Wajib diisi.</td></tr>
-<tr><td align="left">vat</td><td align="left">varchar</td><td align="left">NPWP Klien. Diisi dengan format <em><strong>ID</strong></em> + NPWP Klien</td></tr>
 <tr><td align="left">street</td><td align="left">varchar</td><td align="left">Jalan</td></tr>
 <tr><td align="left">street2</td><td align="left">varchar</td><td align="left">Jalan (baris ke-2)</td></tr>
 <tr><td align="left">zip</td><td align="left">varchar</td><td align="left">Kode pos</td></tr>
 <tr><td align="left">city</td><td align="left">varchar</td><td align="left">Kota/Kabupaten/Kota Madya</td></tr>
 <tr><td align="left">state_id</td><td align="left">integer</td><td align="left">ID database dari propinsi</td></tr>
 <tr><td align="left">country_id</td><td align="left">integer</td><td align="left">ID database dari negara</td></tr>
-<tr><td align="left">country_id</td><td align="left">integer</td><td align="left">ID database dari negara</td></tr>
 <tr><td align="left">email</td><td align="left">varchar</td><td align="left">Email</td></tr>
+<tr><td align="left">phone</td><td align="left">varchar</td><td align="left">Nomor telepon</td></tr>
+<tr><td align="left">mobil</td><td align="left">varchar</td><td align="left">Nomor handphone</td></tr>
 </tbody></table>
 <h4><a class="header" href="#contoh" id="contoh">Contoh</a></h4>
 <pre><code class="language-bash">create_vals=&quot;{
-    'name': 'PT. Simetri Sinergi Indonesia',
+    'name': 'Andhitia Rama',
+    'parent_id': 3,
     'customer': True,
     'is_company': True,
-    'vat': 'ID94.695.791.7-002.000'
     'street': 'vOffice East. Jl. Raya Perserikatan No. 1 Blok A Kav 261',
-    'steer2': 'RT 002 RW 008 Kec. Rawamangun Kel. Pulogadung',
+    'steet2': 'RT 002 RW 008 Kec. Rawamangun Kel. Pulogadung',
     'city': 'Jakarta Timur',
     'zip': '13220',
     'state_id': 60,
     'country_id': 101,
     'email': 'you@example.com',
+    'phone': '+62219237483',
+    'mobile': '+628882000014',
 
 }&quot;
 curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create_vals}&quot; \
