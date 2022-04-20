@@ -17,6 +17,7 @@
     - [Mencari ID Reimburstment Type](./search_master/reimbursement_type.md)
     - [Mencari ID Product](./search_master/product.md)
     - [Mencari ID UOM](./search_master/uom.md)
+    - [Mencari ID Bank](./search_master/bank.md)
 - [Partner](./partner.md)
     - [Mencari ID Partner](./search_master/partner.md)
     - [Membuat Partner](./partner/membuat.md)
