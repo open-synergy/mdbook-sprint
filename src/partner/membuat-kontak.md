@@ -22,6 +22,7 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | email         | varchar       | Email                                                                             |
 | phone         | varchar       | Nomor telepon                                                                     |
 | mobil         | varchar       | Nomor handphone                                                                     |
+| function      | varchar       | Jabatan
 
 #### Contoh
 ```bash
@@ -39,6 +40,7 @@ create_vals="{
     'email': 'you@example.com',
     'phone': '+62219237483',
     'mobile': '+628882000014',
+    'function': 'Konsultan',
 
 }"
 curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76&create_vals=${create_vals}" \
