@@ -12,7 +12,7 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | name          | varchar       | Nama klien. Wajib diisi                                                           |
 | parent_id     | integer       | ID database dari partner utama                                                    |
 | customer      | boolean       | Diisi dengan **True**. Wajib diisi.                                               |
-| is_customer   | boolean       | Diisi dengan **True**. Wajib diisi.                                               |
+| is_company    | boolean       | Diisi dengan **False**. Wajib diisi.                                               |
 | street        | varchar       | Jalan                                                                             |
 | street2       | varchar       | Jalan (baris ke-2)                                                                |
 | zip           | varchar       | Kode pos                                                                          |
@@ -29,7 +29,7 @@ create_vals="{
     'name': 'Andhitia Rama',
     'parent_id': 3,
     'customer': True,
-    'is_company': True,
+    'is_company': False,
     'street': 'vOffice East. Jl. Raya Perserikatan No. 1 Blok A Kav 261',
     'steet2': 'RT 002 RW 008 Kec. Rawamangun Kel. Pulogadung',
     'city': 'Jakarta Timur',
