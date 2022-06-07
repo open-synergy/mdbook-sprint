@@ -504,7 +504,7 @@ curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create
 <tr><td align="left">name</td><td align="left">varchar</td><td align="left">Nama klien. Wajib diisi</td></tr>
 <tr><td align="left">parent_id</td><td align="left">integer</td><td align="left">ID database dari partner utama</td></tr>
 <tr><td align="left">customer</td><td align="left">boolean</td><td align="left">Diisi dengan <strong>True</strong>. Wajib diisi.</td></tr>
-<tr><td align="left">is_customer</td><td align="left">boolean</td><td align="left">Diisi dengan <strong>True</strong>. Wajib diisi.</td></tr>
+<tr><td align="left">is_company</td><td align="left">boolean</td><td align="left">Diisi dengan <strong>False</strong>. Wajib diisi.</td></tr>
 <tr><td align="left">street</td><td align="left">varchar</td><td align="left">Jalan</td></tr>
 <tr><td align="left">street2</td><td align="left">varchar</td><td align="left">Jalan (baris ke-2)</td></tr>
 <tr><td align="left">zip</td><td align="left">varchar</td><td align="left">Kode pos</td></tr>
@@ -520,7 +520,7 @@ curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create
     'name': 'Andhitia Rama',
     'parent_id': 3,
     'customer': True,
-    'is_company': True,
+    'is_company': False,
     'street': 'vOffice East. Jl. Raya Perserikatan No. 1 Blok A Kav 261',
     'steet2': 'RT 002 RW 008 Kec. Rawamangun Kel. Pulogadung',
     'city': 'Jakarta Timur',
