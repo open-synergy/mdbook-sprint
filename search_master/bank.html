@@ -154,11 +154,11 @@
 <h4><a class="header" href="#parameter" id="parameter">Parameter</a></h4>
 <ul>
 <li><b>model:</b> res.bank</br></li>
-<li><b>domain:</b> [('name', '=', &lt;nama_bank&gt;)]</br>
+<li><b>domain:</b> [('acc_number', '=', &lt;nomor_rekening&gt;)]</br>
 <b>nama_bank</b> = Nama Bank.</li>
 </ul>
 <h4><a class="header" href="#contoh" id="contoh">Contoh</a></h4>
-<pre><code class="language-bash">curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;domain=[('name', '=', 'Bank BCA')]&quot; \
+<pre><code class="language-bash">curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;domain=[('acc_number', '=', '9384658743658745')]&quot; \
     https://demo8.simetri-sinergi.id/api/res.bank/search
 </code></pre>
 <h4><a class="header" href="#mencari-semua-id-bank" id="mencari-semua-id-bank">Mencari Semua ID Bank</a></h4>
