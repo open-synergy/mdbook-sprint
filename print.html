@@ -514,6 +514,7 @@ curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create
 <tr><td align="left">email</td><td align="left">varchar</td><td align="left">Email</td></tr>
 <tr><td align="left">phone</td><td align="left">varchar</td><td align="left">Nomor telepon</td></tr>
 <tr><td align="left">mobil</td><td align="left">varchar</td><td align="left">Nomor handphone</td></tr>
+<tr><td align="left">function</td><td align="left">varchar</td><td align="left">Jabatan</td></tr>
 </tbody></table>
 <h4><a class="header" href="#contoh-11" id="contoh-11">Contoh</a></h4>
 <pre><code class="language-bash">create_vals=&quot;{
@@ -530,6 +531,7 @@ curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create
     'email': 'you@example.com',
     'phone': '+62219237483',
     'mobile': '+628882000014',
+    'function': 'Konsultan',
 
 }&quot;
 curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create_vals}&quot; \
