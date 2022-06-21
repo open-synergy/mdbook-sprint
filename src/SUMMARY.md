@@ -22,6 +22,8 @@
     - [Mencari ID Partner](./search_master/partner.md)
     - [Membuat Partner](./partner/membuat.md)
     - [Membuat Kontak](./partner/membuat-kontak.md)
+- [Product](./product.md)
+    - [Membuat Product Saleable](./product/membuat-product-saleable.md)
 - [Bank Account](./bank-account.md)
     - [Membuat Bank Account](./bank-account/membuat.md)
     - [Mengupdate Bank Account](./bank-account/mengupdate.md)    
