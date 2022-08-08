@@ -21,6 +21,7 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | country_id    | integer       | ID database dari negara                                                           |
 | country_id    | integer       | ID database dari negara                                                           |
 | email         | varchar       | Email
+| ref           | varchar       | CustomerID
 
 
 #### Contoh
