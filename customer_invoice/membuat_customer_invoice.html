@@ -175,7 +175,7 @@
 <tr><td align="left">account_id</td><td align="left">integer</td><td align="left">ID Account yang didapat dari <a href="../search_master/account.html">Mencari ID Account</a></td></tr>
 <tr><td align="left">price_unit</td><td align="left">float</td><td align="left">Harga satuan</td></tr>
 <tr><td align="left">quantity</td><td align="left">float</td><td align="left">Kuantitas</td></tr>
-<tr><td align="left">invoice_line_tax_id</td><td align="left">[(6, 0, &lt;list_of_id&gt;)]</td><td align="left">Apabila ada PPN, (1) isi <b>list_of_id</b> dengan <b>[3]</b> jika exclude PPN, atau (2)<b>[4]</b> jika include PPN, atau (3) <strong>[3,10]</strong> jika exclude PPN dan klien adalah WAPU, atau (4) <strong>[4,9]</strong> jika include PPN dan klien adalah WAPU. Apabila tidak ada hilangkan.</td></tr>
+<tr><td align="left">invoice_line_tax_id</td><td align="left">[(6, 0, &lt;list_of_id&gt;)]</td><td align="left">Apabila ada PPN, (1) isi <b>list_of_id</b> dengan <b>[14]</b> jika exclude PPN, atau (2)<b>[16]</b> jika include PPN, atau (3) <strong>[14,13]</strong> jika exclude PPN dan klien adalah WAPU, atau (4) <strong>[16,15]</strong> jika include PPN dan klien adalah WAPU. Apabila tidak ada hilangkan.</td></tr>
 </tbody></table>
 <h4><a class="header" href="#contoh" id="contoh">Contoh</a></h4>
 <pre><code class="language-bash">create_vals=&quot;{
