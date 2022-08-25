@@ -156,12 +156,13 @@
 <li><b>create_vals:</b> </br></li>
 </ul>
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
-<tr><td align="left">state</td><td align="left">string</td><td align="left">Bank Account Type, isi dengan &quot;<b>bank</b>&quot;</td></tr>
+<tr><td align="left">state</td><td align="left">string</td><td align="left">Bank Account Type, isi dengan &quot;<b>bank</b>&quot; untuk rekening normal atau diisi dengan &quot;<b>VA</b>&quot; untuk rekening virtual account</td></tr>
 <tr><td align="left">acc_number</td><td align="left">string</td><td align="left">Account Number</td></tr>
 <tr><td align="left">bank</td><td align="left">integer</td><td align="left">ID Bank yang didapat dari <a href="../search_master/bank.html">Mencari Bank</a></td></tr>
 <tr><td align="left">bank_name</td><td align="left">string</td><td align="left">Bank Name</td></tr>
 <tr><td align="left">partner_id</td><td align="left">integer</td><td align="left">Account Owner, isi dengan &quot;<b>1</b>&quot;</td></tr>
 <tr><td align="left">journal_id</td><td align="left">integer</td><td align="left">ID Journal yang didapat dari <a href="../search_master/journal.html">Mencari Journal</a></td></tr>
+<tr><td align="left">owner_name</td><td align="left">string</td><td align="left">Nama pemilik rekening. Diisi dengan PT. Sprint Asia Technology untuk rekening bank normal atau diisi dengan nama VA</td></tr>
 </tbody></table>
 <h4><a class="header" href="#contoh" id="contoh">Contoh</a></h4>
 <pre><code class="language-bash">create_vals=&quot;{
