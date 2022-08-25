@@ -8,12 +8,13 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 
 | Key                                          | Type                     | Description                                                                                                   |
 | :---                                         | :---                     | :---                                                                                                          |
-| state                                        | string                   | Bank Account Type, isi dengan "<b>bank</b>"                                                                   |
+| state                                        | string                   | Bank Account Type, isi dengan "<b>bank</b>" untuk rekening normal atau diisi dengan "<b>VA</b>" untuk rekening virtual account                                                                |
 | acc_number                                   | string                   | Account Number                                                                                                |
 | bank                                         | integer                  | ID Bank yang didapat dari [Mencari Bank](../search_master/bank.md)                                            |
 | bank_name                                    | string                   | Bank Name                                                                                                     |
 | partner_id                                   | integer                  | Account Owner, isi dengan "<b>1</b>"                                                                          |
 | journal_id                                   | integer                  | ID Journal yang didapat dari [Mencari Journal](../search_master/journal.md)                                   |
+| owner_name                                   | string                   | Nama pemilik rekening. Diisi dengan PT. Sprint Asia Technology untuk rekening bank normal atau diisi dengan nama VA                                                                                               |
 
 #### Contoh
 ```bash
