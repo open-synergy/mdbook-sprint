@@ -10,6 +10,7 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | :---              | :---                     | :---                                                                           |
 | internal_number   | string                   | Nomor Invoice                                                                  |
 | partner_id        | integer                  | ID Partner yang didapat dari [Mencari ID Partner](../search_master/partner.md) |
+| customer_code     | string                   | Kode klien                                                                     |
 | account_id        | integer                  | Isi dengan ID: <b>948</b>                                                      |
 | journal_id        | integer                  | Isi dengan ID: <b>46</b>                                                       |
 | type              | string                   | Isi dengan <b>out_invoice</b>  
