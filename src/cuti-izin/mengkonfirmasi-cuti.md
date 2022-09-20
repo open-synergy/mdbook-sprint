@@ -2,7 +2,7 @@
 
 #### Endpoint
 ```bash
-/api/hr.holidays/id/method/action_confirm
+/api/hr.leave/id/method/action_confirm
 ```
 
 #### Parameters

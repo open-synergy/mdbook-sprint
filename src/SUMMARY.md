@@ -35,7 +35,6 @@
     - [Membuat Absen Keluar](./attendance/membuat_absen_keluar.md)
 - [Cuti dan Izin](./cuti-izin.md)    
     - [Membuat Cuti Izin](./cuti-izin/membuat.md)
-    - [Mencari Sisa Cuti](./cuti-izin/mencari-sisa-cuti.md)
     - [Mengkonfirmasi Cuti](./cuti-izin/mengkonfirmasi-cuti.md)
     - [Menyetujui Cuti](./cuti-izin/menyetujui-cuti.md)
     - [Menolak Cuti](./cuti-izin/menolak-cuti.md)
