@@ -22,7 +22,7 @@
 | employee_id       | integer                  | ID Database karyawan yang akan mengajukan cuti/izin                                    |
 | type_id           | integer                  | ID Database dari jenis izin/cuti                                                       |
 | date_start        | date                     | Tanggal dan waktu mulai cuti/izin. Format YYYY-MM-DD                                   |
-| date_end          | date                     | Tanggal dan waktu selesai cuti/izin. Format YYYY-MM-DD HH:MM:SS                        |
+| date_end          | date                     | Tanggal dan waktu selesai cuti/izin. Format YYYY-MM-DD                       |
 
 
 ### Return
