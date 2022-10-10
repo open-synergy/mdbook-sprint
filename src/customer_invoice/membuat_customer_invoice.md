@@ -23,6 +23,7 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 
 | Key                 | Type                           | Description                                                                                                                     |
 | :---                | :---                           | :---                                                                                                                            |
+| sequence            | integer                        | Urutan
 | product_id          | integer                        | ID Produk layanan.
 | name                | string                         | Deskripsi Invoice                                                                                                               |
 | account_id          | integer                        | ID Account yang didapat dari [Mencari ID Account](../search_master/account.md)                                                  |
