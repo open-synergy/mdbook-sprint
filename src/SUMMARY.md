@@ -21,6 +21,7 @@
 - [Partner](./partner.md)
     - [Mencari ID Partner](./search_master/partner.md)
     - [Membuat Partner](./partner/membuat.md)
+    - [Mengupdate Partner](./partner/mengupdate.md)
     - [Membuat Kontak](./partner/membuat-kontak.md)
 - [Product](./product.md)
     - [Membuat Product Saleable](./product/membuat-product-saleable.md)

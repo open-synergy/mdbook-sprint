@@ -1,13 +1,14 @@
-# Membuat Partner
+# Mengupdate Partner
 
 #### Endpoint
 ```bash
-/api/res.partner/create
+/api/res.partner/updata/<<id-partner>>
 ```
+
 
 #### Parameter
 - **token:** API token</br>
-- **create_vals:**
+- **update_vals:**
 
 | Key           | Type          | Description                                                                       |
 | :---          | :---          | :---                                                                              |
@@ -28,7 +29,7 @@
 
 #### Contoh
 ```bash
-create_vals="{
+update_vals="{
     'name': 'PT. Simetri Sinergi Indonesia',
     'customer': True,
     'is_company': True,
@@ -42,6 +43,7 @@ create_vals="{
     'email': 'you@example.com',
 
 }"
-curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76&create_vals=${create_vals}" \
-    https://demo8.simetri-sinergi.id/api/res.partner/create
+curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76&update_vals=${update_vals}" \
+    https://demo8.simetri-sinergi.id/api/res.partner/update/3
 ```
+
