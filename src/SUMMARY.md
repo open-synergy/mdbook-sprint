@@ -43,6 +43,7 @@
     - [Mengkonfirmasi Cuti](./cuti-izin/mengkonfirmasi-cuti.md)
     - [Menyetujui Cuti](./cuti-izin/menyetujui-cuti.md)
     - [Menolak Cuti](./cuti-izin/menolak-cuti.md)
+    - [Mencari Sisa Cuti](./cuti-izin/mencari-sisa-cuti.md)
 - [Reimbursement](./reimbursement.md)
     - [Membuat Reimbursement](./reimbursement/membuat.md)
     - [Mengkonfirmasi Reimbursement](./reimbursement/mengkonfirmasi.md)
