@@ -31,6 +31,8 @@
 - [Customer Invoice](./customer_invoice.md)
     - [Mencari Customer Invoice](./customer_invoice/mencari_customer_invoice.md)
     - [Membuat Customer Invoice](./customer_invoice/membuat_customer_invoice.md)
+    - [Mengupdate Header Customer Invoice](./customer_invoice/mengupdate-header-customer-invoice.md)
+    - [Mengupdate Detail Customer Invoice](./customer_invoice/mengupdate-detail-customer-invoice.md)    
     - [Menghapus Customer Invoice](./customer_invoice/menghapus_customer_invoice.md)
     - [Membatalkan Customer Invoice](./customer_invoice/membatalkan-customer-invoice.md)
     - [Merestart Customer Invoice](./customer_invoice/merestart-customer-invoice.md)
