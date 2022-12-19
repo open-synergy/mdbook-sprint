@@ -15,8 +15,7 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | journal_id        | integer                  | Isi dengan ID: <b>46</b>                                                       |
 | type              | string                   | Isi dengan <b>out_invoice</b>  
 | partner_bank_id   | integer                  | ID rekening bank tujuan
-| date_invoice      | date                     | Tanggal Invoice                                                                |
-| date_due          | date                     | Tanggal Jatuh Tempo                                                            |
+[ payment_term      | integer                  } Gunakan ID 4 untuk 14 hari. ID 3 untuk 30 hari                                 |
 | user_id           | integer                  | ID user yang bertanggung jawab                                                 |
 | urgent            | boolean                  | True apabila urgent
 | urgency_note      | text                     | Catatan terkait urgency                                                        |
