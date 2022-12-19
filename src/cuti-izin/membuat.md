@@ -20,6 +20,9 @@
 | Key               | Type                     | Description                                                                            |
 | :---              | :---                     | :---                                                                                   |
 | employee_id       | integer                  | ID Database karyawan yang akan mengajukan cuti/izin                                    |
+| department_id     | integer                  | ID department karyawan yang akan mengajukan cuti (optional)                            |
+| job_id            | integer                  | ID Database jabatan karyawan yang akan mengajukan cuti/izin (optional)                 |
+| manager_id        | integer                  | ID Database atasan karyawan yang akan mengajukan cuti/izin (optional)                  |
 | type_id           | integer                  | ID Database dari jenis izin/cuti                                                       |
 | date_start        | date                     | Tanggal dan waktu mulai cuti/izin. Format YYYY-MM-DD                                   |
 | date_end          | date                     | Tanggal dan waktu selesai cuti/izin. Format YYYY-MM-DD                       |
