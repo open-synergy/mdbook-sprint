@@ -1024,6 +1024,9 @@ curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create
 <h4><a class="header" href="#create_vals" id="create_vals">create_vals</a></h4>
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
 <tr><td align="left">employee_id</td><td align="left">integer</td><td align="left">ID Database karyawan yang akan mengajukan cuti/izin</td></tr>
+<tr><td align="left">department_id</td><td align="left">integer</td><td align="left">ID department karyawan yang akan mengajukan cuti (optional)</td></tr>
+<tr><td align="left">job_id</td><td align="left">integer</td><td align="left">ID Database jabatan karyawan yang akan mengajukan cuti/izin (optional)</td></tr>
+<tr><td align="left">manager_id</td><td align="left">integer</td><td align="left">ID Database atasan karyawan yang akan mengajukan cuti/izin (optional)</td></tr>
 <tr><td align="left">type_id</td><td align="left">integer</td><td align="left">ID Database dari jenis izin/cuti</td></tr>
 <tr><td align="left">date_start</td><td align="left">date</td><td align="left">Tanggal dan waktu mulai cuti/izin. Format YYYY-MM-DD</td></tr>
 <tr><td align="left">date_end</td><td align="left">date</td><td align="left">Tanggal dan waktu selesai cuti/izin. Format YYYY-MM-DD</td></tr>
