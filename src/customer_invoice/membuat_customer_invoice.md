@@ -17,6 +17,7 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | partner_bank_id   | integer                  | ID rekening bank tujuan
 | date_invoice      | date                     | Tanggal Invoice                                                                |
 | date_due          | date                     | Tanggal Jatuh Tempo                                                            |
+| user_id           | integer                  | ID user yang bertanggung jawab                                                 |
 | urgent            | boolean                  | True apabila urgent
 | urgency_note      | text                     | Catatan terkait urgency                                                        |
 | invoice_line      | [(0, 0, &lt;dict&gt;)]   | Detail Invoices. Penjelasan ada dibawah                                        |
