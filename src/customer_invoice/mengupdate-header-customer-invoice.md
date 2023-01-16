@@ -23,6 +23,7 @@
 | urgency_note      | text                     | Catatan terkait urgency                                                        |
 | period_id         | integer                  | Diisi dengan **False**
 | invoice_line      | [(5)]                    | Detail Invoices. Penjelasan ada dibawah                                        |
+| last_backoffice_sync      | datetime                     | Waktu terakhir invoice diupdate dari backoffice                                                       |
 
 
 #### Contoh
