@@ -9,6 +9,7 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | Key               | Type                     | Description                                                                    |
 | :---              | :---                     | :---                                                                           |
 | internal_number   | string                   | Nomor Invoice                                                                  |
+| name              | string                   | Informasi untuk faktur pajak                                                   |
 | partner_id        | integer                  | ID Partner yang didapat dari [Mencari ID Partner](../search_master/partner.md) |
 | customer_code     | string                   | Kode klien                                                                     |
 | account_id        | integer                  | Isi dengan ID: <b>948</b>                                                      |
