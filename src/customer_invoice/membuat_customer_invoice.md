@@ -12,7 +12,7 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | name              | string                   | Informasi untuk faktur pajak                                                   |
 | partner_id        | integer                  | ID Partner yang didapat dari [Mencari ID Partner](../search_master/partner.md) |
 | customer_code     | string                   | Kode klien                                                                     |
-| cc     | string                   | CC Email                                                                     |
+| email_cc     | string                   | CC Email                                                                     |
 | account_id        | integer                  | Isi dengan ID: <b>948</b>                                                      |
 | journal_id        | integer                  | Isi dengan ID: <b>46</b>                                                       |
 | type              | string                   | Isi dengan <b>out_invoice</b>  
