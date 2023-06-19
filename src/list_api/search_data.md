@@ -5,12 +5,13 @@
 ```
 
 #### Parameters
-| Parameter | Mandatory     | Description                          | Type               |
-| :---      | :---          | :---                                 | :---               |
-| token     | yes           | Token user                           | string             |
-| domain    | no            | Kriteria pencarian data              | tuple dalam list   |
-| offset    | no            | Banyaknya data yang akan diabaikan   | integer            |
-| limit     | no            | Maksimal data yang akan dihasilkan   | integer            |
+| Parameter | Mandatory     | Description                          | Type                      |
+| :---      | :---          | :---                                 | :---                      |
+| token     | yes           | Token user                           | string                    |
+| domain    | no            | Kriteria pencarian data              | string:tuple:list         |
+| fields    | no            | List of field yang akan direturn     | string:list               |
+| offset    | no            | Banyaknya data yang akan diabaikan   | integer                   |
+| limit     | no            | Maksimal data yang akan dihasilkan   | integer                   |
 
 #### Output
 - Tanpa Parameter
