@@ -868,31 +868,52 @@ https://demo8.simetri-sinergi.id/api/account.invoice/unlink/3</p>
 </code></pre>
 <h1><a class="header" href="#menambahkan-attachment-pada-customer-invoice" id="menambahkan-attachment-pada-customer-invoice">Menambahkan Attachment Pada Customer Invoice</a></h1>
 <h4><a class="header" href="#endpoint-29" id="endpoint-29">Endpoint</a></h4>
-<pre><code class="language-bash">/api/ir.attachment/create
+<pre><code class="language-bash">/api/attachment/create
 </code></pre>
 <h4><a class="header" href="#parameter-21" id="parameter-21">Parameter</a></h4>
 <ul>
 <li><strong>token:</strong> API token</br></li>
+<li><strong>file:</strong> File Attachment</li>
 <li><strong>create_vals:</strong></li>
 </ul>
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
-<tr><td align="left">datas</td><td align="left">base64</td><td align="left">base64 file yang akan diattach</td></tr>
 <tr><td align="left">datas_fname</td><td align="left">string</td><td align="left">nama file yang akan diattach</td></tr>
 <tr><td align="left">name</td><td align="left">base64</td><td align="left">nama attachment. Boleh sama dengan datas_fname</td></tr>
-<tr><td align="left">res_model</td><td align="left">string</td><td align="left">diisi <strong>account.invoice</strong></td></tr>
+<tr><td align="left">type</td><td align="left">string</td><td align="left">diisi dengan <strong>binary</strong></td></tr>
+<tr><td align="left">res_model</td><td align="left">string</td><td align="left">diisi dengan <strong>account.invoice</strong></td></tr>
 <tr><td align="left">res_id</td><td align="left">integer</td><td align="left">ID customer invoice</td></tr>
-<tr><td align="left"></td><td align="left"></td><td align="left"></td></tr>
 </tbody></table>
 <h4><a class="header" href="#contoh-23" id="contoh-23">Contoh</a></h4>
-<pre><code class="language-bash">create_vals=&quot;{
-    'datas_fname': 'rekap-penagihan.pdf',
-    'name': 'rekap-penagihan.pdf',
-    'res_model': 'account.invoice',
-    'res_id': 34,
-    'datas': base64,
-}&quot;
-curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create_vals}&quot; \
-    https://demo8.simetri-sinergi.id/api/ir.attachment/create
+<pre><code class="language-bash">import requests
+import base64
+
+params = {
+    &quot;login&quot;: &quot;admin&quot;,
+    &quot;password&quot;: &quot;admin&quot;
+}
+
+response = requests.get(&quot;https://localhost:8069/api/user/get_token?&quot;, params=params)
+json_data = response.json()
+token = json_data[&quot;token&quot;]
+
+vals = {
+    &quot;name&quot;: &quot;invoice.pdf&quot;,
+    &quot;type&quot;: &quot;binary&quot;,
+    &quot;datas_fname&quot;: &quot;create_data_invoice.pdf&quot;,
+    &quot;res_model&quot;: &quot;res.partner&quot;,
+    &quot;res_id&quot;: 6,
+}
+
+params = {
+    &quot;token&quot;: token,
+    &quot;create_vals&quot;: str(vals),
+}
+
+f = open(&quot;/home/ubuntu/Documents/create_data_invoice.pdf&quot;, 'rb')
+files = {&quot;file&quot;: f}
+
+response = requests.get(&quot;https://localhost:8069/api/attachment/create?&quot;, files=files, params=params)
+print (response.content)
 </code></pre>
 <h1><a class="header" href="#mengupdate-detail-customer-invoice-1" id="mengupdate-detail-customer-invoice-1">Mengupdate Detail Customer Invoice</a></h1>
 <h4><a class="header" href="#endpoint-30" id="endpoint-30">Endpoint</a></h4>
@@ -971,10 +992,12 @@ print (response.content)
 </code></pre>
 <h1><a class="header" href="#mengupdate-data-attachment-berdasarkan-id-invoice" id="mengupdate-data-attachment-berdasarkan-id-invoice">Mengupdate Data Attachment Berdasarkan ID Invoice</a></h1>
 <h4><a class="header" href="#endpoint-32" id="endpoint-32">Endpoint</a></h4>
-<p>Penjelasan lebih lanjut bisa dilihat <a href="customer_invoice/../list_api/update_data.html">disini</a></p>
+<pre><code class="language-bash">/api/attachment/update
+</code></pre>
 <h4><a class="header" href="#parameter-24" id="parameter-24">Parameter</a></h4>
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
 <tr><td align="left">token</td><td align="left">string</td><td align="left">Isi dengan token</td></tr>
+<tr><td align="left">file</td><td align="left">string</td><td align="left">File Attachment</td></tr>
 <tr><td align="left">update_vals</td><td align="left">string</td><td align="left">Update Value. Penjelasan ada dibawah</td></tr>
 </tbody></table>
 <ul>
@@ -983,7 +1006,6 @@ print (response.content)
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
 <tr><td align="left">name</td><td align="left">string</td><td align="left">Nama Attachment</td></tr>
 <tr><td align="left">type</td><td align="left">string</td><td align="left">Isi dengan &quot;binary&quot;</td></tr>
-<tr><td align="left">datas</td><td align="left">string</td><td align="left">Binary File</td></tr>
 <tr><td align="left">datas_fname</td><td align="left">string</td><td align="left">Nama Original File</td></tr>
 </tbody></table>
 <h4><a class="header" href="#contoh-26" id="contoh-26">Contoh</a></h4>
@@ -998,14 +1020,12 @@ response = requests.get(&quot;http://localhost:8069/api/user/get_token?&quot;, p
 json_data = response.json()
 token = json_data[&quot;token&quot;]
 
-with open(&quot;/home/ubuntu/Documents/test.csv&quot;, &quot;rb&quot;) as binary_file:
-    file_data = binary_file.read()
-    datas = base64.b64encode(file_data)
+f = open(&quot;/home/ubuntu/Documents/test.csv&quot;, 'rb')
+files = {&quot;file&quot;: f}
 
 vals = {
     &quot;name&quot;: &quot;update_data_invoice.csv&quot;,
     &quot;type&quot;: &quot;binary&quot;,
-    &quot;datas&quot;: datas,
     &quot;datas_fname&quot;: &quot;test.csv&quot;,
 }
 
@@ -1014,10 +1034,7 @@ params = {
     &quot;update_vals&quot;: str(vals),
 }
 
-# FORMAT API = /api/ir.attachment/update/{id_attachment}
-
-response = requests.get(&quot;http://localhost:8069/api/ir.attachment/update/441&quot;, params=params)
-json_data = response.json()
+response = requests.get(&quot;http://localhost:8069/api/attachment/update/441&quot;,files=files, params=params)
 print (response.content)
 </code></pre>
 <blockquote>
@@ -1305,19 +1322,20 @@ curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create
 </code></pre>
 <h1><a class="header" href="#attach-dokumen-pada-reimbursement" id="attach-dokumen-pada-reimbursement">Attach Dokumen Pada Reimbursement</a></h1>
 <h4><a class="header" href="#endpoint-43" id="endpoint-43">Endpoint</a></h4>
-<p>Penjelasan lebih lanjut bisa dilihat <a href="reimbursement/../list_api/create_data.html">disini</a></p>
+<pre><code class="language-bash">/api/attachment/create
+</code></pre>
 <h4><a class="header" href="#parameter-30" id="parameter-30">Parameter</a></h4>
 <ul>
-<li><b>model:</b>hr.reimbursement</br></li>
-<li><b>create_vals:</b> </br></li>
+<li><strong>token:</strong> API token</br></li>
+<li><strong>file:</strong> File Attachment</li>
+<li><strong>create_vals:</strong></li>
 </ul>
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
-<tr><td align="left">name</td><td align="left">string</td><td align="left">Isi dengan nama file attachment disertakan dengan extension filenya, cth: png,txt,jpeg</td></tr>
-<tr><td align="left">type</td><td align="left">string</td><td align="left">Isi dengan &quot;<b>binary</b>&quot;</td></tr>
-<tr><td align="left">datas</td><td align="left">base64</td><td align="left">File attachment yang sudah dikonversi menjadi format base64</td></tr>
-<tr><td align="left">datas_fname</td><td align="left">string</td><td align="left">Nama harus sesuai dengan file yang hendak diupload</td></tr>
-<tr><td align="left">res_model</td><td align="left">string</td><td align="left">Isikan dengan &quot;<b>hr.reimbursement</b>&quot;</td></tr>
-<tr><td align="left">res_id</td><td align="left">integer</td><td align="left">ID Reimbursement yang ingin dilampirkan attachment</td></tr>
+<tr><td align="left">datas_fname</td><td align="left">string</td><td align="left">nama file yang akan diattach</td></tr>
+<tr><td align="left">name</td><td align="left">base64</td><td align="left">nama attachment. Boleh sama dengan datas_fname</td></tr>
+<tr><td align="left">type</td><td align="left">string</td><td align="left">diisi dengan <strong>binary</strong></td></tr>
+<tr><td align="left">res_model</td><td align="left">string</td><td align="left">diisi dengan <strong>hr.reimbursement</strong></td></tr>
+<tr><td align="left">res_id</td><td align="left">integer</td><td align="left">ID Reimbursement</td></tr>
 </tbody></table>
 <blockquote>
 <p><b><i>Note:</i></b> File Extension antara <b>name</b> dan <b>datas_fname</b> harus sama</p>
@@ -1334,13 +1352,9 @@ response = requests.get(&quot;http://localhost:8069/api/user/get_token?&quot;, p
 json_data = response.json()
 token = json_data[&quot;token&quot;]
 
-datas = open(&quot;/home/ubuntu/Documents/data1.png&quot;, 'rb').read().encode('base64')
-
-
 vals = {
     &quot;name&quot;: &quot;attachment.png&quot;,
     &quot;type&quot;: &quot;binary&quot;,
-    &quot;datas&quot;: datas,
     &quot;datas_fname&quot;: &quot;data1.png&quot;,
     &quot;res_model&quot;: &quot;hr.reimbursement&quot;,
     &quot;res_id&quot;: 8,
@@ -1351,7 +1365,10 @@ params = {
     &quot;create_vals&quot;: str(vals),
 }
 
-response = requests.get(&quot;http://localhost:8069/api/ir.attachment/create?&quot;, params=params)
+f = open(&quot;/home/ubuntu/Documents/data1.png&quot;, 'rb')
+files = {&quot;file&quot;: f}
+
+response = requests.get(&quot;http://localhost:8069/api/attachment/create?&quot;, files=files, params=params)
 print (response.content)
 </code></pre>
 

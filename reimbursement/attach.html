@@ -149,19 +149,20 @@
                     <main>
                         <h1><a class="header" href="#attach-dokumen-pada-reimbursement" id="attach-dokumen-pada-reimbursement">Attach Dokumen Pada Reimbursement</a></h1>
 <h4><a class="header" href="#endpoint" id="endpoint">Endpoint</a></h4>
-<p>Penjelasan lebih lanjut bisa dilihat <a href="../list_api/create_data.html">disini</a></p>
+<pre><code class="language-bash">/api/attachment/create
+</code></pre>
 <h4><a class="header" href="#parameter" id="parameter">Parameter</a></h4>
 <ul>
-<li><b>model:</b>hr.reimbursement</br></li>
-<li><b>create_vals:</b> </br></li>
+<li><strong>token:</strong> API token</br></li>
+<li><strong>file:</strong> File Attachment</li>
+<li><strong>create_vals:</strong></li>
 </ul>
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
-<tr><td align="left">name</td><td align="left">string</td><td align="left">Isi dengan nama file attachment disertakan dengan extension filenya, cth: png,txt,jpeg</td></tr>
-<tr><td align="left">type</td><td align="left">string</td><td align="left">Isi dengan &quot;<b>binary</b>&quot;</td></tr>
-<tr><td align="left">datas</td><td align="left">base64</td><td align="left">File attachment yang sudah dikonversi menjadi format base64</td></tr>
-<tr><td align="left">datas_fname</td><td align="left">string</td><td align="left">Nama harus sesuai dengan file yang hendak diupload</td></tr>
-<tr><td align="left">res_model</td><td align="left">string</td><td align="left">Isikan dengan &quot;<b>hr.reimbursement</b>&quot;</td></tr>
-<tr><td align="left">res_id</td><td align="left">integer</td><td align="left">ID Reimbursement yang ingin dilampirkan attachment</td></tr>
+<tr><td align="left">datas_fname</td><td align="left">string</td><td align="left">nama file yang akan diattach</td></tr>
+<tr><td align="left">name</td><td align="left">base64</td><td align="left">nama attachment. Boleh sama dengan datas_fname</td></tr>
+<tr><td align="left">type</td><td align="left">string</td><td align="left">diisi dengan <strong>binary</strong></td></tr>
+<tr><td align="left">res_model</td><td align="left">string</td><td align="left">diisi dengan <strong>hr.reimbursement</strong></td></tr>
+<tr><td align="left">res_id</td><td align="left">integer</td><td align="left">ID Reimbursement</td></tr>
 </tbody></table>
 <blockquote>
 <p><b><i>Note:</i></b> File Extension antara <b>name</b> dan <b>datas_fname</b> harus sama</p>
@@ -178,13 +179,9 @@ response = requests.get(&quot;http://localhost:8069/api/user/get_token?&quot;, p
 json_data = response.json()
 token = json_data[&quot;token&quot;]
 
-datas = open(&quot;/home/ubuntu/Documents/data1.png&quot;, 'rb').read().encode('base64')
-
-
 vals = {
     &quot;name&quot;: &quot;attachment.png&quot;,
     &quot;type&quot;: &quot;binary&quot;,
-    &quot;datas&quot;: datas,
     &quot;datas_fname&quot;: &quot;data1.png&quot;,
     &quot;res_model&quot;: &quot;hr.reimbursement&quot;,
     &quot;res_id&quot;: 8,
@@ -195,7 +192,10 @@ params = {
     &quot;create_vals&quot;: str(vals),
 }
 
-response = requests.get(&quot;http://localhost:8069/api/ir.attachment/create?&quot;, params=params)
+f = open(&quot;/home/ubuntu/Documents/data1.png&quot;, 'rb')
+files = {&quot;file&quot;: f}
+
+response = requests.get(&quot;http://localhost:8069/api/attachment/create?&quot;, files=files, params=params)
 print (response.content)
 </code></pre>
 

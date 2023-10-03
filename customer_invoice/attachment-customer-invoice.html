@@ -149,31 +149,52 @@
                     <main>
                         <h1><a class="header" href="#menambahkan-attachment-pada-customer-invoice" id="menambahkan-attachment-pada-customer-invoice">Menambahkan Attachment Pada Customer Invoice</a></h1>
 <h4><a class="header" href="#endpoint" id="endpoint">Endpoint</a></h4>
-<pre><code class="language-bash">/api/ir.attachment/create
+<pre><code class="language-bash">/api/attachment/create
 </code></pre>
 <h4><a class="header" href="#parameter" id="parameter">Parameter</a></h4>
 <ul>
 <li><strong>token:</strong> API token</br></li>
+<li><strong>file:</strong> File Attachment</li>
 <li><strong>create_vals:</strong></li>
 </ul>
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
-<tr><td align="left">datas</td><td align="left">base64</td><td align="left">base64 file yang akan diattach</td></tr>
 <tr><td align="left">datas_fname</td><td align="left">string</td><td align="left">nama file yang akan diattach</td></tr>
 <tr><td align="left">name</td><td align="left">base64</td><td align="left">nama attachment. Boleh sama dengan datas_fname</td></tr>
-<tr><td align="left">res_model</td><td align="left">string</td><td align="left">diisi <strong>account.invoice</strong></td></tr>
+<tr><td align="left">type</td><td align="left">string</td><td align="left">diisi dengan <strong>binary</strong></td></tr>
+<tr><td align="left">res_model</td><td align="left">string</td><td align="left">diisi dengan <strong>account.invoice</strong></td></tr>
 <tr><td align="left">res_id</td><td align="left">integer</td><td align="left">ID customer invoice</td></tr>
-<tr><td align="left"></td><td align="left"></td><td align="left"></td></tr>
 </tbody></table>
 <h4><a class="header" href="#contoh" id="contoh">Contoh</a></h4>
-<pre><code class="language-bash">create_vals=&quot;{
-    'datas_fname': 'rekap-penagihan.pdf',
-    'name': 'rekap-penagihan.pdf',
-    'res_model': 'account.invoice',
-    'res_id': 34,
-    'datas': base64,
-}&quot;
-curl -i -d &quot;token=858a5f372ea04cb7aad222fb6ba95f76&amp;create_vals=${create_vals}&quot; \
-    https://demo8.simetri-sinergi.id/api/ir.attachment/create
+<pre><code class="language-bash">import requests
+import base64
+
+params = {
+    &quot;login&quot;: &quot;admin&quot;,
+    &quot;password&quot;: &quot;admin&quot;
+}
+
+response = requests.get(&quot;https://localhost:8069/api/user/get_token?&quot;, params=params)
+json_data = response.json()
+token = json_data[&quot;token&quot;]
+
+vals = {
+    &quot;name&quot;: &quot;invoice.pdf&quot;,
+    &quot;type&quot;: &quot;binary&quot;,
+    &quot;datas_fname&quot;: &quot;create_data_invoice.pdf&quot;,
+    &quot;res_model&quot;: &quot;res.partner&quot;,
+    &quot;res_id&quot;: 6,
+}
+
+params = {
+    &quot;token&quot;: token,
+    &quot;create_vals&quot;: str(vals),
+}
+
+f = open(&quot;/home/ubuntu/Documents/create_data_invoice.pdf&quot;, 'rb')
+files = {&quot;file&quot;: f}
+
+response = requests.get(&quot;https://localhost:8069/api/attachment/create?&quot;, files=files, params=params)
+print (response.content)
 </code></pre>
 
                     </main>

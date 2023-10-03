@@ -149,10 +149,12 @@
                     <main>
                         <h1><a class="header" href="#mengupdate-data-attachment-berdasarkan-id-invoice" id="mengupdate-data-attachment-berdasarkan-id-invoice">Mengupdate Data Attachment Berdasarkan ID Invoice</a></h1>
 <h4><a class="header" href="#endpoint" id="endpoint">Endpoint</a></h4>
-<p>Penjelasan lebih lanjut bisa dilihat <a href="../list_api/update_data.html">disini</a></p>
+<pre><code class="language-bash">/api/attachment/update
+</code></pre>
 <h4><a class="header" href="#parameter" id="parameter">Parameter</a></h4>
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
 <tr><td align="left">token</td><td align="left">string</td><td align="left">Isi dengan token</td></tr>
+<tr><td align="left">file</td><td align="left">string</td><td align="left">File Attachment</td></tr>
 <tr><td align="left">update_vals</td><td align="left">string</td><td align="left">Update Value. Penjelasan ada dibawah</td></tr>
 </tbody></table>
 <ul>
@@ -161,7 +163,6 @@
 <table><thead><tr><th align="left">Key</th><th align="left">Type</th><th align="left">Description</th></tr></thead><tbody>
 <tr><td align="left">name</td><td align="left">string</td><td align="left">Nama Attachment</td></tr>
 <tr><td align="left">type</td><td align="left">string</td><td align="left">Isi dengan &quot;binary&quot;</td></tr>
-<tr><td align="left">datas</td><td align="left">string</td><td align="left">Binary File</td></tr>
 <tr><td align="left">datas_fname</td><td align="left">string</td><td align="left">Nama Original File</td></tr>
 </tbody></table>
 <h4><a class="header" href="#contoh" id="contoh">Contoh</a></h4>
@@ -176,14 +177,12 @@ response = requests.get(&quot;http://localhost:8069/api/user/get_token?&quot;, p
 json_data = response.json()
 token = json_data[&quot;token&quot;]
 
-with open(&quot;/home/ubuntu/Documents/test.csv&quot;, &quot;rb&quot;) as binary_file:
-    file_data = binary_file.read()
-    datas = base64.b64encode(file_data)
+f = open(&quot;/home/ubuntu/Documents/test.csv&quot;, 'rb')
+files = {&quot;file&quot;: f}
 
 vals = {
     &quot;name&quot;: &quot;update_data_invoice.csv&quot;,
     &quot;type&quot;: &quot;binary&quot;,
-    &quot;datas&quot;: datas,
     &quot;datas_fname&quot;: &quot;test.csv&quot;,
 }
 
@@ -192,10 +191,7 @@ params = {
     &quot;update_vals&quot;: str(vals),
 }
 
-# FORMAT API = /api/ir.attachment/update/{id_attachment}
-
-response = requests.get(&quot;http://localhost:8069/api/ir.attachment/update/441&quot;, params=params)
-json_data = response.json()
+response = requests.get(&quot;http://localhost:8069/api/attachment/update/441&quot;,files=files, params=params)
 print (response.content)
 </code></pre>
 <blockquote>
