@@ -1,19 +1,21 @@
 # Attach Dokumen Pada Reimbursement
 #### Endpoint
-Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
+```bash
+/api/attachment/create
+```
 
 #### Parameter
-- <b>model:</b>hr.reimbursement</br>
-- <b>create_vals:</b> </br>
+- **token:** API token</br>
+- **file:** File Attachment
+- **create_vals:**
 
-| Key            | Type    | Description                                                                                            |
-| :---           | :---    | :---                                                                                                   |
-| name           | string  | Isi dengan nama file attachment disertakan dengan extension filenya, cth: png,txt,jpeg                 |
-| type           | string  | Isi dengan "<b>binary</b>"                                                                             |
-| datas          | base64  | File attachment yang sudah dikonversi menjadi format base64                                            |
-| datas_fname    | string  | Nama harus sesuai dengan file yang hendak diupload                                                     |
-| res_model      | string  | Isikan dengan "<b>hr.reimbursement</b>"                                                                |
-| res_id         | integer | ID Reimbursement yang ingin dilampirkan attachment                                                     |
+| Key               | Type                     | Description                                                                    |
+| :---              | :---                     | :---                                                                           |
+| datas_fname       | string                   | nama file yang akan diattach                                                   |
+| name              | base64                   | nama attachment. Boleh sama dengan datas_fname                                 |
+| type              | string                   | diisi dengan **binary**                                                        |
+| res_model         | string                   | diisi dengan **hr.reimbursement**                                              |
+| res_id            | integer                  | ID Reimbursement                                                               |
 
 > <b><i>Note:</i></b> File Extension antara <b>name</b> dan <b>datas_fname</b> harus sama
 
@@ -30,13 +32,9 @@ response = requests.get("http://localhost:8069/api/user/get_token?", params=para
 json_data = response.json()
 token = json_data["token"]
 
-datas = open("/home/ubuntu/Documents/data1.png", 'rb').read().encode('base64')
-
-
 vals = {
     "name": "attachment.png",
     "type": "binary",
-    "datas": datas,
     "datas_fname": "data1.png",
     "res_model": "hr.reimbursement",
     "res_id": 8,
@@ -47,6 +45,9 @@ params = {
     "create_vals": str(vals),
 }
 
-response = requests.get("http://localhost:8069/api/ir.attachment/create?", params=params)
+f = open("/home/ubuntu/Documents/data1.png", 'rb')
+files = {"file": f}
+
+response = requests.get("http://localhost:8069/api/attachment/create?", files=files, params=params)
 print (response.content)
 ```

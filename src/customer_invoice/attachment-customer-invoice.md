@@ -1,32 +1,52 @@
 # Menambahkan Attachment Pada Customer Invoice
 #### Endpoint
 ```bash
-/api/ir.attachment/create
+/api/attachment/create
 ```
 
 #### Parameter
 - **token:** API token</br>
+- **file:** File Attachment
 - **create_vals:**
 
 | Key               | Type                     | Description                                                                    |
 | :---              | :---                     | :---                                                                           |
-| datas             | base64                   | base64 file yang akan diattach                                                 |
 | datas_fname       | string                   | nama file yang akan diattach                                                   |
 | name              | base64                   | nama attachment. Boleh sama dengan datas_fname                                 |
-| res_model         | string                   | diisi **account.invoice**                                                      |
+| type              | string                   | diisi dengan **binary**                                                        |
+| res_model         | string                   | diisi dengan **account.invoice**                                               |
 | res_id            | integer                  | ID customer invoice                                                            |
-                                      |
-
 
 #### Contoh
 ```bash
-create_vals="{
-    'datas_fname': 'rekap-penagihan.pdf',
-    'name': 'rekap-penagihan.pdf',
-    'res_model': 'account.invoice',
-    'res_id': 34,
-    'datas': base64,
-}"
-curl -i -d "token=858a5f372ea04cb7aad222fb6ba95f76&create_vals=${create_vals}" \
-    https://demo8.simetri-sinergi.id/api/ir.attachment/create
+import requests
+import base64
+
+params = {
+    "login": "admin",
+    "password": "admin"
+}
+
+response = requests.get("https://localhost:8069/api/user/get_token?", params=params)
+json_data = response.json()
+token = json_data["token"]
+
+vals = {
+    "name": "invoice.pdf",
+    "type": "binary",
+    "datas_fname": "create_data_invoice.pdf",
+    "res_model": "res.partner",
+    "res_id": 6,
+}
+
+params = {
+    "token": token,
+    "create_vals": str(vals),
+}
+
+f = open("/home/ubuntu/Documents/create_data_invoice.pdf", 'rb')
+files = {"file": f}
+
+response = requests.get("https://localhost:8069/api/attachment/create?", files=files, params=params)
+print (response.content)
 ```

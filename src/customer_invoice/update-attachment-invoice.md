@@ -1,11 +1,14 @@
 # Mengupdate Data Attachment Berdasarkan ID Invoice
 #### Endpoint
-Penjelasan lebih lanjut bisa dilihat [disini](../list_api/update_data.md)
+```bash
+/api/attachment/update
+```
 
 #### Parameter
 | Key            | Type    | Description                               |
 | :---           | :---    | :---                                      |
 | token          | string  | Isi dengan token                          |
+| file           | string  | File Attachment                           |
 | update_vals    | string  | Update Value. Penjelasan ada dibawah      |
 
 - Penjelasan isi dictionary dari <b>update_vals:</b> </br>
@@ -14,7 +17,6 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/update_data.md)
 | :---           | :---    | :---                                      |
 | name           | string  | Nama Attachment                           |
 | type           | string  | Isi dengan "binary"                       |
-| datas          | string  | Binary File                               |
 | datas_fname    | string  | Nama Original File                        |
 
 #### Contoh
@@ -30,14 +32,12 @@ response = requests.get("http://localhost:8069/api/user/get_token?", params=para
 json_data = response.json()
 token = json_data["token"]
 
-with open("/home/ubuntu/Documents/test.csv", "rb") as binary_file:
-    file_data = binary_file.read()
-    datas = base64.b64encode(file_data)
+f = open("/home/ubuntu/Documents/test.csv", 'rb')
+files = {"file": f}
 
 vals = {
     "name": "update_data_invoice.csv",
     "type": "binary",
-    "datas": datas,
     "datas_fname": "test.csv",
 }
 
@@ -46,10 +46,7 @@ params = {
     "update_vals": str(vals),
 }
 
-# FORMAT API = /api/ir.attachment/update/{id_attachment}
-
-response = requests.get("http://localhost:8069/api/ir.attachment/update/441", params=params)
-json_data = response.json()
+response = requests.get("http://localhost:8069/api/attachment/update/441",files=files, params=params)
 print (response.content)
 ```
 > <b><i>Note:</i></b>
