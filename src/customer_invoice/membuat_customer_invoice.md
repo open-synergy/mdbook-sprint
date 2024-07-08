@@ -11,6 +11,7 @@ Penjelasan lebih lanjut bisa dilihat [disini](../list_api/create_data.md)
 | internal_number   | string                   | Nomor Invoice                                                                  |
 | name              | string                   | Informasi untuk faktur pajak                                                   |
 | partner_id        | integer                  | ID Partner yang didapat dari [Mencari ID Partner](../search_master/partner.md) |
+| taxform_address_id        | integer                  | ID alamat taxform yang didapat dari [Mencari ID Partner](../search_master/partner.md). Hanya diinput ketika alamat NPWP berbeda dengan alamat corporate |
 | customer_code     | string                   | Kode klien                                                                     |
 | email_cc     | string                   | CC Email                                                                     |
 | account_id        | integer                  | Isi dengan ID: <b>948</b>                                                      |
